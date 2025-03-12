@@ -1,15 +1,15 @@
 public class RadixSort {
 
-    public static void radixSort(int[] arr) {
-        int max = getMax(arr);
+    public static void radixSort(char[] arr) {
+        char max = getMax(arr);
         for (int exp = 1; max / exp > 0; exp *= 10) {
             countSort(arr, exp);
         }
     }
 
-    private static void countSort(int[] arr, int exp) {
+    private static void countSort(char[] arr, int exp) {
         int n = arr.length;
-        int[] output = new int[n];
+        char[] output = new char[n];
         int[] count = new int[10];
 
         for (int i = 0; i < n; i++) {
@@ -30,8 +30,8 @@ public class RadixSort {
         }
     }
 
-    private static int getMax(int[] arr) {
-        int max = arr[0];
+    private static char getMax(char[] arr) {
+        char max = arr[0];
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] > max) {
                 max = arr[i];
